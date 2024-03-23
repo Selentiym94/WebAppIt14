@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using WebApplication.Logic.Interfaces;
+using WebApplication.Logic.Models.Requests;
 
 namespace WebApplication.Logic.Processors
 {
@@ -17,15 +18,23 @@ namespace WebApplication.Logic.Processors
         {
             _baseUrl = baseUrl;
         }
-        public async Task<List<User>> GetUser(string name)
+        public async Task<List<Todos>> GetTodos(int? userId)
         {
-            return await GetData<User>("users");
+            ITypeCodeRequest request = new GetTodoRequest(userId.GetValueOrDefault());
+            return await GetData<Todos>(request);
         }
 
-        private async Task<List<TData>> GetData<TData>(string path)
+        public async Task<List<User>> GetUser(string name)
+        {
+            ITypeCodeRequest request = new GetUserRequest(name);
+            return await GetData<User>(request);
+        }
+
+        private async Task<List<TData>> GetData<TData>(ITypeCodeRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
+                string path = request.GetRequestsParams();
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.RequestUri = new Uri($"{_baseUrl}/{path}");
                 message.Method = HttpMethod.Get;

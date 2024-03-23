@@ -4,6 +4,7 @@ namespace WebApplication.Logic.Interfaces
 {
     public interface IPlaceholderClient
     {
-        public User GetUser(string name);
+        Task<List<User>> GetUser(string name);
+        Task<List<Todos>> GetTodos(int? userId);
     }
 }
