@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace Miha.Models
 {
-    public class Photos
+    public class Photo
     {
         [JsonPropertyName("albumId")]
         public int AlbumId { get; set; }

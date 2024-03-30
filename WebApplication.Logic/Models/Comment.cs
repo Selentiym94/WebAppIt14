@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Miha.Models
 {
-    public class Comments
+    public class Comment
     {
         [JsonPropertyName("postId")]
         public int PostId { get; set; }

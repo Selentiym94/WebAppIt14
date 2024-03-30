@@ -13,6 +13,32 @@ namespace WebApplication.Logic.Processors
         {
             _baseUrl = baseUrl;
         }
+
+        public async Task<List<Photo>> GetPhotos(int? postId)
+        {
+            ITypeCodeRequest request = new GetPhotoRequest(postId.GetValueOrDefault());
+            return await GetData<Photo>(request);
+        }
+
+
+        public async Task<List<Comment>> GetComments(int? postId)
+        {
+            ITypeCodeRequest request = new GetCommentRequest(postId.GetValueOrDefault());
+            return await GetData<Comment>(request);
+        }
+
+        public async Task<List<Album>> GetAlbums(int? userId)
+        {
+            ITypeCodeRequest request = new GetAlbuRequest(userId.GetValueOrDefault());
+            return await GetData<Album>(request);
+        }
+
+        public async Task<List<Post>> GetPosts(int? userId)
+        {
+            ITypeCodeRequest request = new GetPostRequest(userId.GetValueOrDefault());
+            return await GetData<Post>(request);
+        }
+
         public async Task<List<Todos>> GetTodos(int? userId)
         {
             ITypeCodeRequest request = new GetTodoRequest(userId.GetValueOrDefault());
