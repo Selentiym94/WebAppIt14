@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApplication.Logic.Processors;
 
 namespace WebApplication2.Controllers
 {
@@ -6,8 +7,10 @@ namespace WebApplication2.Controllers
     [Route("[controller]")]
     public class HomeController : ControllerBase
     {
-        public HomeController()
+        private readonly PlaceholderDataProcessor _dataProcessor;
+        public HomeController(PlaceholderDataProcessor dataProcessor)
         {
+            _dataProcessor = dataProcessor;
         }
 
         [HttpGet("healthCheck")]

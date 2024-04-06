@@ -14,9 +14,9 @@ namespace WebApplication.Logic.Processors
             _baseUrl = baseUrl;
         }
 
-        public async Task<List<Photo>> GetPhotos(int? postId)
+        public async Task<List<Photo>> GetPhotos(int? albumId)
         {
-            ITypeCodeRequest request = new GetPhotoRequest(postId.GetValueOrDefault());
+            ITypeCodeRequest request = new GetPhotoRequest(albumId.GetValueOrDefault());
             return await GetData<Photo>(request);
         }
 
