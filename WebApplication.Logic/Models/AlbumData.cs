@@ -1,7 +1,7 @@
 ﻿using Miha.Models;
 using System.Xml.Linq;
 
-namespace WebApplication.Logic.Models
+namespace WebApplication2.Logic.Models
 {
     public class AlbumData
     {

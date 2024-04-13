@@ -1,6 +1,6 @@
-﻿using WebApplication.Logic.Interfaces;
+﻿using WebApplication2.Logic.Interfaces;
 
-namespace WebApplication.Logic.Models.Requests
+namespace WebApplication2.Logic.Models.Requests
 {
     public class GetAlbuRequest : ITypeCodeRequest
     {
@@ -13,9 +13,9 @@ namespace WebApplication.Logic.Models.Requests
         public string GetRequestsParams()
         {
             string result = "albums";
-            if (UsertId > 0)
+            if (UserId > 0)
             {
-                result += $"?userId={UsertId}";
+                result += $"?userId={UserId}";
             }
             return result;
         }

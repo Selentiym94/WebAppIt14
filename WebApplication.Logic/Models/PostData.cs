@@ -1,6 +1,6 @@
 ﻿using Miha.Models;
 
-namespace WebApplication.Logic.Models
+namespace WebApplication2.Logic.Models
 {
     public class PostData
     {

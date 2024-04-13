@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Logic.Processors;
+using System.Runtime.CompilerServices;
+using WebApplication2.Logic.Models;
+using WebApplication2.Logic.Processors;
 
 namespace WebApplication2.Controllers
 {
@@ -20,6 +22,21 @@ namespace WebApplication2.Controllers
                 "Дима",
                     "Вася"
             });
+        }
+
+        [HttpGet("user")]
+        public async Task<IActionResult> GetByName([FromQuery]string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return BadRequest("Invalid request params");
+            }
+            PlaceholderResult resultData =await _dataProcessor.GetData(name);
+            if (resultData == null)
+            {
+                return BadRequest("Not found");
+            }
+            return Ok(resultData);
         }
     }
 }

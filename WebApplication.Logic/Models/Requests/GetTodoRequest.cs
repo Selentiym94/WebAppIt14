@@ -1,6 +1,6 @@
-﻿using WebApplication.Logic.Interfaces;
+﻿using WebApplication2.Logic.Interfaces;
 
-namespace WebApplication.Logic.Models.Requests
+namespace WebApplication2.Logic.Models.Requests
 {
     public class GetTodoRequest : ITypeCodeRequest
     {

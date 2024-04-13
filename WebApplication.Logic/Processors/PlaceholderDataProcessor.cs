@@ -1,8 +1,8 @@
 ﻿using Miha.Models;
-using WebApplication.Logic.Interfaces;
-using WebApplication.Logic.Models;
+using WebApplication2.Logic.Interfaces;
+using WebApplication2.Logic.Models;
 
-namespace WebApplication.Logic.Processors
+namespace WebApplication2.Logic.Processors
 {
     public class PlaceholderDataProcessor
     {

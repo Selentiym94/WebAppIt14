@@ -1,9 +1,9 @@
 ﻿using Miha.Models;
 using System.Text.Json;
-using WebApplication.Logic.Interfaces;
-using WebApplication.Logic.Models.Requests;
+using WebApplication2.Logic.Interfaces;
+using WebApplication2.Logic.Models.Requests;
 
-namespace WebApplication.Logic.Processors
+namespace WebApplication2.Logic.Processors
 {
     public class PlaceholderClient : IPlaceholderClient
     {
